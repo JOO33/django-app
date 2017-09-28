@@ -1,0 +1,5 @@
+[run]
+include = mandatelife/*
+omit = *migrations*, *tests*
+plugins =
+    django_coverage_plugin
