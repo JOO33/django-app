@@ -1,4 +1,4 @@
-# MandateLife documentation build configuration file, created by
+# mandatelife documentation build configuration file, created by
 # sphinx-quickstart.
 #
 # This file is execfile()d with the current directory set to its containing dir.
@@ -39,7 +39,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'MandateLife'
+project = 'mandatelife'
 copyright = """2017, JooHee Lee"""
 
 # The version info for the project you're documenting, acts as replacement for
@@ -184,7 +184,7 @@ latex_elements = {
 latex_documents = [
     ('index',
      'mandatelife.tex',
-     'MandateLife Documentation',
+     'mandatelife Documentation',
      """JooHee Lee""", 'manual'),
 ]
 
@@ -214,7 +214,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'mandatelife', 'MandateLife Documentation',
+    ('index', 'mandatelife', 'mandatelife Documentation',
      ["""JooHee Lee"""], 1)
 ]
 
@@ -228,9 +228,9 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    ('index', 'mandatelife', 'MandateLife Documentation',
-     """JooHee Lee""", 'MandateLife',
-     """Social Commerce Website""", 'Miscellaneous'),
+    ('index', 'mandatelife', 'mandatelife Documentation',
+     """JooHee Lee""", 'mandatelife',
+     """Mandate Life Site""", 'Miscellaneous'),
 ]
 
 # Documents to append as an appendix to all manuals.

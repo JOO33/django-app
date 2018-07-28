@@ -1,5 +1,5 @@
 """
-Production Configurations
+Production settings for mandatelife project.
 
 - Use WhiteNoise for serving static files
 - Use Amazon's S3 for storing uploaded media
@@ -106,8 +106,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # EMAIL
 # ------------------------------------------------------------------------------
 DEFAULT_FROM_EMAIL = env('DJANGO_DEFAULT_FROM_EMAIL',
-                         default='MandateLife <noreply@mandatelife.com>')
-EMAIL_SUBJECT_PREFIX = env('DJANGO_EMAIL_SUBJECT_PREFIX', default='[MandateLife]')
+                         default='mandatelife <noreply@mandatelife.com>')
+EMAIL_SUBJECT_PREFIX = env('DJANGO_EMAIL_SUBJECT_PREFIX', default='[mandatelife]')
 SERVER_EMAIL = env('DJANGO_SERVER_EMAIL', default=DEFAULT_FROM_EMAIL)
 
 # Anymail with Mailgun

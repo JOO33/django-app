@@ -301,9 +301,11 @@ pyvenv.cfg
 pip-selfcheck.json
 
 
-mailhog
 
 
 mandatelife/media/
 
+# Added to maintain local compose files which are ignored by something above.
+# See issue https://github.com/pydanny/cookiecutter-django/issues/1321
+!/compose/local/
 

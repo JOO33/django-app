@@ -1,5 +1,5 @@
 """
-Django settings for MandateLife project.
+Base settings for mandatelife project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/dev/topics/settings/
@@ -50,6 +50,7 @@ THIRD_PARTY_APPS = [
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
     'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
 ]
 
 # Apps specific for this project go here.
@@ -57,6 +58,7 @@ LOCAL_APPS = [
     # custom users app
     'mandatelife.users.apps.UsersConfig',
     # Your stuff: custom apps go here
+    'api'
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -109,6 +111,8 @@ MANAGERS = ADMINS
 # DATABASE CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
+# Uses django-environ to accept uri format
+# See: https://django-environ.readthedocs.io/en/latest/#supported-types
 DATABASES = {
     'default': env.db('DATABASE_URL', default='postgres:///mandatelife'),
 }

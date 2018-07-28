@@ -1,9 +1,9 @@
 """
-Local settings
+Local settings for mandatelife project.
 
 - Run in Debug mode
 
-- Use mailhog for emails
+- Use mailhog for emails via Docker
 
 - Add Django Debug Toolbar
 - Add django-extensions as app
@@ -20,14 +20,14 @@ TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 # Note: This key only used for development and testing.
-SECRET_KEY = env('DJANGO_SECRET_KEY', default='h5+}t8vZh{bjv&)5F#Y*8xD_K3iO+z10BL3%o98y=J:jQns0Nu')
+SECRET_KEY = env('DJANGO_SECRET_KEY', default='?12&nVi|u[_x?/M0)^/H6y<{xtA`VYAh/96lX0C0HU=WH$?.,o')
 
 # Mail settings
 # ------------------------------------------------------------------------------
 
 EMAIL_PORT = 1025
 
-EMAIL_HOST = 'localhost'
+EMAIL_HOST = env('EMAIL_HOST', default='mailhog')
 
 
 # CACHING
@@ -45,6 +45,14 @@ MIDDLEWARE += ['debug_toolbar.middleware.DebugToolbarMiddleware', ]
 INSTALLED_APPS += ['debug_toolbar', ]
 
 INTERNAL_IPS = ['127.0.0.1', '10.0.2.2', ]
+
+
+import socket
+import os
+# tricks to have debug toolbar when developing with docker
+if os.environ.get('USE_DOCKER') == 'yes':
+    ip = socket.gethostbyname(socket.gethostname())
+    INTERNAL_IPS += [ip[:-1] + '1']
 
 DEBUG_TOOLBAR_CONFIG = {
     'DISABLE_PANELS': [
